@@ -11,8 +11,16 @@ function tambahProduk(nama, harga, stok){
     console.log(`produk ${nama} berhasil ditambahkan!`);
 }
 function hapusProduk(id){
-
+    const index = produkToko.findIndex(produk => produk.id === id);
+    if (index !== -1) {
+        const namaProduk = produkToko[index].nama;
+        produkToko.splice(index, 1);
+        console.log(`Produk ${namaProduk} (ID: ${id}) berhasil dihapus!`);
+    } else {
+        console.log(`Gagal: Produk dengan ID ${id} tidak ditemukan.`);
+    }
 }
+
 function tampilkanProduk(){
 console.log("\n=== Daftar Produk Toko ===");
         produkToko.forEach(produk => {
@@ -22,4 +30,6 @@ console.log("\n=== Daftar Produk Toko ===");
     }
 tampilkanProduk();
 tambahProduk("Monitor", 1500000 ,3);
+tampilkanProduk();
+hapusProduk(2);
 tampilkanProduk();
