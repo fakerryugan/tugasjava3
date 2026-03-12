@@ -14,6 +14,12 @@ function hapusProduk(id){
 
 }
 function tampilkanProduk(){
-
-}
+console.log("\n=== Daftar Produk Toko ===");
+        produkToko.forEach(produk => {
+            console.log(`ID: ${produk.id} | Nama: ${produk.nama} | Harga: Rp${produk.harga} | Stok: ${produk.stok}`);
+        });
+    console.log("==========================\n");
+    }
+tampilkanProduk();
 tambahProduk("Monitor", 1500000 ,3);
+tampilkanProduk();
